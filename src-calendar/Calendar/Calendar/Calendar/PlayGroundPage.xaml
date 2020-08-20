@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Calendar.PlayGroundPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Calendar"
+    xmlns:views="clr-namespace:Calendar.Views">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label FontSize="Subtitle" Text="Cores" />
+            <Grid
+                Padding="5"
+                BackgroundColor="Brown"
+                ColumnDefinitions="*,*,*,*,*"
+                HeightRequest="20">
+
+                <StackLayout Grid.Column="0" BackgroundColor="{DynamicResource Key=Primary}" />
+                <StackLayout Grid.Column="1" BackgroundColor="{DynamicResource Key=PrimaryLight}" />
+                <StackLayout Grid.Column="2" BackgroundColor="{DynamicResource Key=PrimaryDark}" />
+                <StackLayout Grid.Column="3" BackgroundColor="#303031" />
+                <StackLayout Grid.Column="4" BackgroundColor="{DynamicResource TextGray}" />
+            </Grid>
+            <Label FontSize="Subtitle" Text="Ícones" />
+            <Label
+                FontFamily="FontAwesomeLight"
+                FontSize="Title"
+                Text="{Static local:FontAwesome.Cog}"
+                TextColor="{DynamicResource TextGray}" />
+            <Label FontSize="Subtitle" Text="Elementos" />
+            <StackLayout Orientation="Horizontal">
+                <views:MesView
+                    HorizontalOptions="Center"
+                    Mes="Janeiro"
+                    Selecionado="True" />
+                <views:MesView Mes="Fevereiro" Selecionado="False" />
+                <views:MesView Mes="Março" Selecionado="True" />
+                <views:MesView Mes="Abril" Selecionado="True" />
+            </StackLayout>
+
+            <views:CustomPicker Selected="TESTE" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
